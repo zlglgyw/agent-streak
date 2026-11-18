@@ -21,7 +21,7 @@ streak milestones (3 / 7 / 14 / 30 days).
 
 ```
 contracts/   Foundry project: AgentStreak.sol + tests + mock Agent ID (testnet)
-web/         Static single-page frontend (no build step)
+docs/        Static single-page frontend (GitHub Pages site) (no build step)
 ```
 
 ## Deployed contracts
@@ -63,7 +63,7 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Set the deployed contract address in `web/config.js` before use.
+Set the deployed contract address in `docs/config.js` before use.
 
 ## Verify on BscScan
 

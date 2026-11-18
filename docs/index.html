@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentStreak — Daily check-ins for Agent ID holders</title>
+<meta name="description" content="AgentStreak: daily check-in streaks and soulbound badges for Agent ID holders. Free — gas only.">
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">🔥</span>
+    <div>
+      <h1>AgentStreak</h1>
+      <p class="tagline">Daily check-in streaks for Agent ID holders</p>
+    </div>
+  </div>
+  <div class="wallet-box">
+    <button id="connectBtn" class="btn primary">Connect Wallet</button>
+    <span id="walletAddr" class="addr hidden"></span>
+  </div>
+</header>
+
+<main>
+  <div id="deployWarning" class="banner warn hidden">
+    Contract not deployed yet — check-in is disabled until the AgentStreak
+    contract address is configured. See the repo README for deployment status.
+  </div>
+  <div id="networkBar" class="banner info hidden">
+    You are on <span id="networkName">—</span>.
+    <button id="switchMainnetBtn" class="btn small">Switch to BSC Mainnet</button>
+    <button id="switchTestnetBtn" class="btn small">Switch to BSC Testnet</button>
+  </div>
+
+  <section class="card" id="holderCard">
+    <h2>Agent ID status</h2>
+    <p id="holderStatus" class="muted">Connect your wallet to check your Agent ID status.</p>
+  </section>
+
+  <section class="card" id="statsCard">
+    <h2>Your streak</h2>
+    <div class="stats">
+      <div class="stat"><span class="num" id="statCurrent">–</span><span class="lbl">Current streak</span></div>
+      <div class="stat"><span class="num" id="statLongest">–</span><span class="lbl">Longest streak</span></div>
+      <div class="stat"><span class="num" id="statTotal">–</span><span class="lbl">Total check-ins</span></div>
+      <div class="stat"><span class="num" id="statLast">–</span><span class="lbl">Last check-in (UTC)</span></div>
+    </div>
+    <div class="actions">
+      <button id="checkInBtn" class="btn primary big" disabled>Check In Today</button>
+      <span id="checkInStatus" class="muted"></span>
+    </div>
+    <p class="muted small">One check-in per UTC day. Free — you only pay network gas.
+      Your streak grows when you check in on consecutive days and resets if you miss a day.</p>
+  </section>
+
+  <section class="card" id="badgesCard">
+    <h2>Soulbound badges</h2>
+    <p class="muted">Badges are non-transferable NFTs with fully on-chain metadata.
+      Claim one when your current streak reaches the milestone.</p>
+    <div class="badges" id="badgeGrid"></div>
+  </section>
+
+  <section class="card" id="feedCard">
+    <h2>Recent check-ins</h2>
+    <p class="muted small" id="feedNote">Loading recent on-chain check-ins…</p>
+    <ul class="feed" id="feedList"></ul>
+  </section>
+</main>
+
+<footer>
+  <p>AgentStreak is free to use (network gas only). Badges have no monetary value and no yield —
+    nothing here is a promise of returns.</p>
+  <p>We never ask for your seed phrase, private key, or pairing code.
+    Contract is open source: <a id="repoLink" href="#" target="_blank" rel="noopener">github.com/zlglgyw/agent-streak</a>
+    · <a id="contractLink" href="#" target="_blank" rel="noopener">View contract on BscScan</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
