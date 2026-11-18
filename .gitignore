@@ -1,0 +1,22 @@
+# Build artifacts
+out/
+cache/
+broadcast/
+*.flattened.sol
+
+# Foundry dependencies (installed via `forge install`)
+lib/
+contracts/lib/
+
+# Secrets — never commit
+.env
+.env.*
+*.key
+*.pem
+keystore/
+**/keystore/
+deployer*.json
+
+# Tooling
+node_modules/
+.DS_Store
