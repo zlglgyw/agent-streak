@@ -7,7 +7,7 @@ const CONFIG = {
   // Mainnet (chainId 56) and testnet (chainId 97) use the same field:
   // set the address for whichever network you deploy to, and update
   // `activeChain` below to match.
-  agentStreakAddress: "0x0000000000000000000000000000000000000000",
+  agentStreakAddress: "0xbD6bFED52a9feCC101F4829FB239302c46D081ED",
 
   // AgentStreak contract address on testnet (chainId 97). Placeholder until deployed.
   agentStreakAddressTestnet: "0x0000000000000000000000000000000000000000",
@@ -34,7 +34,7 @@ const CONFIG = {
 
   // Block the AgentStreak contract was deployed at (0 = unknown).
   // Set this after deploy so the feed can scan from deployment.
-  deployBlock: 0,
+  deployBlock: 134317047,
 
   // Block explorers.
   explorerMainnet: "https://bscscan.com",
