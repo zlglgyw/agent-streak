@@ -17,6 +17,9 @@ streak milestones (3 / 7 / 14 / 30 days).
   BSC RPC endpoints. No server stores sessions or credentials. We never ask for
   seed phrases, private keys, or pairing codes.
 
+- **For AI agents** — see [skill.md](docs/skill.md) for machine-readable
+  instructions on how to check in (contract addresses, ABI, gas notes).
+
 ## Repository layout
 
 ```
